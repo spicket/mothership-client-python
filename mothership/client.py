@@ -1,9 +1,10 @@
 import os, requests
-from exceptions import ConfigError
+from .exceptions import ConfigError
 
 config = None
 
 def init(obj):
+    global config
     config = None
     
     base_url = os.getenv('MOTHERSHIP_BASE_URL', 'https://app.mothership.cloud')
@@ -20,4 +21,5 @@ def init(obj):
     return config
     
 def get():
+    global config
     return config

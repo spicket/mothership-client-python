@@ -1,7 +1,7 @@
 import unittest
 from unittest import mock
-import client
-from exceptions import ConfigError
+from . import client
+from .exceptions import ConfigError
 
 def mocked_requests_get(*args, **kwargs):
     class MockResponse:
